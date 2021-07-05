@@ -7,7 +7,6 @@ namespace Program.Models
     {
         public string Name { get; set; }
         public RoverState State { get; set; }
-        public List<char> NextMoves { get; set; }
 
         public Rover(
             string name,
@@ -18,6 +17,10 @@ namespace Program.Models
         {
             this.Name = name;
             State = new(Latitude, Longitude, DirectionHelper.ResolveDirection(direction));
+        }
+        public void Move(Plateau plateau)
+        {
+            this.State.Move(plateau);
         }
     }
 }
