@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Program.Helpers;
 
 namespace Program.Models
@@ -6,6 +7,7 @@ namespace Program.Models
     {
         public string Name { get; set; }
         public RoverState State { get; set; }
+        public List<char> NextMoves { get; set; }
 
         public Rover(
             string name,
