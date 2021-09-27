@@ -5,8 +5,8 @@ namespace Program.Models
 {
     public class Plateau
     {
-        public Coordinate LowerLeft { get; set; }
-        public Coordinate UpperRight { get; set; }
+        public Coordinate LowerLeft { get; init; }
+        public Coordinate UpperRight { get; init; }
         public List<Coordinate> TakenPoints { get; set; }
 
         public Plateau(

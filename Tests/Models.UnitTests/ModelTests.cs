@@ -16,7 +16,7 @@ namespace Models.UnitTests
             _fixture = new Fixture();
         }
         [Fact]
-        public void GivenInvalidChar_Should_ReturnUnkown()
+        public void GivenValidDirective_Should_ReturnTrue()
         {
             int latitude = 5;
             int longitude = 5;
@@ -24,10 +24,9 @@ namespace Models.UnitTests
             RoverState roverState = new(latitude, longitude, CompassEnum.North);
 
             Plateau plateau = new(5, 5);
+            Coordinate nextCoordinate = new(5, 6);
 
-            Coordinate coordinate = new(6, 6);
-
-            bool isTrue = roverState.IsOutsiteOfPlateau(plateau);
+            bool isTrue = roverState.IsOutsiteOfPlateau(plateau, nextCoordinate);
 
             isTrue.Should().BeTrue();
         }
