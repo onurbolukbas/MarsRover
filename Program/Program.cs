@@ -29,12 +29,11 @@ namespace Program
             for (int i = 2; i < args.Length; i += 2)
             {
                 char[] directions = args[i].ToCharArray();
-                int index = 0;
+                int index = (i / 2) - 1;
 
                 //Her bir direktifi saptar
                 for (int j = 0; j < directions.Length; j++)
                 {
-                    index = (i / 2) - 1;
                     roverList.ElementAt(index).State.SendDirective(directions[j], plateau);
                 }
 
